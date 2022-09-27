@@ -22,10 +22,3 @@ class MyApp extends StatelessWidget {
   }
 }
 
-//homepage.dart
-
-//Firstpage.dart
-
-//Secondpage.dart
-
-//Thirdpage.dart
