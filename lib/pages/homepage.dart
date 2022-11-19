@@ -40,7 +40,7 @@ class _HomepageState extends State<Homepage> {
           ),
         ),
       ),
-      drawer: myDrawer,
+      drawer: myDrawer(),
       backgroundColor: Colors.blue[200],
       body: _pages[_currentPage],
       bottomNavigationBar: BottomNavigationBar(
@@ -48,22 +48,11 @@ class _HomepageState extends State<Homepage> {
         currentIndex: _currentPage,
         type: BottomNavigationBarType.fixed,
         items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-            ),
-            label: 'Home',
-          ),
+              icon: Icon(Icons.grid_3x3_sharp), label: 'Categories'),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.grid_3x3_sharp,
-            ),
-            label: 'Categories',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.heart_broken),
-            label: 'Favorites',
-          )
+              icon: Icon(Icons.heart_broken), label: 'Favorites')
         ],
       ),
     );
@@ -71,81 +60,84 @@ class _HomepageState extends State<Homepage> {
 }
 
 //Drawer Implimentation
-var myDrawer = Drawer(
-  backgroundColor: Colors.blue[300],
-  child: Column(
-    children: [
-      DrawerHeader(
-        child: Center(
+Widget myDrawer() {
+  return Drawer(
+    backgroundColor: Colors.blue[300],
+    child: Column(
+      children: [
+        DrawerHeader(
+          child: Center(
             child: Text(
-          'LOGO',
-          style: TextStyle(
-            fontSize: 30,
-            fontWeight: FontWeight.bold,
-          ),
-        )),
-      ),
-      // DarkMode Switch
-      ListTile(
-        title: Text(
-          'Share to friends',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
+              'LOGO',
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
         ),
-        trailing: Icon(Icons.share),
-        onTap: () {},
-      ),
-      ListTile(
-        title: Text(
-          'Publisher info',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
+        // DarkMode Switch
+        ListTile(
+          title: Text(
+            'Share to friends',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
           ),
+          trailing: Icon(Icons.share),
+          onTap: () {},
         ),
-        trailing: Icon(Icons.bookmark),
-        onTap: () {},
-      ),
-      ListTile(
-        title: Text(
-          'Privacy Policy',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
+        ListTile(
+          title: Text(
+            'Publisher info',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
           ),
+          trailing: Icon(Icons.bookmark),
+          onTap: () {},
         ),
-        trailing: Icon(Icons.privacy_tip),
-        onTap: () {},
-      ),
-      ListTile(
-        title: Text(
-          'Rate Us',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
+        ListTile(
+          title: Text(
+            'Privacy Policy',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
           ),
+          trailing: Icon(Icons.privacy_tip),
+          onTap: () {},
         ),
-        trailing: Icon(Icons.star),
-        onTap: () {},
-      ),
-      ListTile(
-        title: Text(
-          'More apps',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
+        ListTile(
+          title: Text(
+            'Rate Us',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
           ),
+          trailing: Icon(Icons.star),
+          onTap: () {},
         ),
-        trailing: Icon(Icons.apps),
-        onTap: () {},
-      ),
-      ListTile(
-        title: Text(
-          'About',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
+        ListTile(
+          title: Text(
+            'More apps',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
           ),
+          trailing: Icon(Icons.apps),
+          onTap: () {},
         ),
-        trailing: Icon(Icons.info_outline_sharp),
-        onTap: () {},
-      ),
-    ],
-  ),
-);
+        ListTile(
+          title: Text(
+            'About',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          trailing: Icon(Icons.info_outline_sharp),
+          onTap: () {},
+        ),
+      ],
+    ),
+  );
+}
